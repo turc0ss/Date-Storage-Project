@@ -53,6 +53,7 @@ public class MainUI extends UI {
 		rootLayout.setMargin(true);
 		
 		headerLayout = new VerticalLayout();
+		headerLayout.setSpacing(true);
 		
 		headerLabel = new Label("<h2><b>"+DateStringUtils.HEADER_TEXT.getString()+"</b></h2>", ContentMode.HTML);
 		headerLayout.addComponent(headerLabel);

@@ -53,13 +53,13 @@ public class MainUI extends UI {
 		rootLayout.setMargin(true);
 		
 		headerLayout = new VerticalLayout();
-		headerLayout.setSpacing(true);
 		
 		headerLabel = new Label("<h2><b>"+DateStringUtils.HEADER_TEXT.getString()+"</b></h2>", ContentMode.HTML);
 		headerLayout.addComponent(headerLabel);
 		
 		buttonLayout = new VerticalLayout();
 		buttonLayout.setSpacing(true);
+		buttonLayout.setMargin(true);
 		
 		dateButton = new Button(DateStringUtils.BUTTON_TEXT.getString());
 		dateButton.addClickListener(new ClickListener() {

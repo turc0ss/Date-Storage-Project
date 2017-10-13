@@ -19,6 +19,11 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories({"com.tmattila"})
 public class App extends SpringBootServletInitializer {
 
+	/**
+	 * 
+	 * @param args
+	 * 
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
 	}

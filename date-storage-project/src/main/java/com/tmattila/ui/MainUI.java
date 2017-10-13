@@ -22,7 +22,12 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-@SpringUI(path="/ui")
+/***
+ * 
+ * @author tapsa
+ *
+ */
+@SpringUI(path = "/ui")
 @Theme("valo")
 @Title("Date Storage App")
 public class MainUI extends UI {
@@ -30,77 +35,76 @@ public class MainUI extends UI {
 	private VerticalLayout rootLayout;
 	private VerticalLayout headerLayout;
 	private VerticalLayout buttonLayout;
-	
+
 	private Label headerLabel;
 	private Label timeLabel;
 	private Label dateLabel;
-	
+
 	private Button dateButton;
-	
+
 	private Date date;
 	private DateFormat dateF = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-	
+
 	private Dates dates;
 	private BeanFieldGroup<Dates> fieldGroup;
-	
+
 	@Override
 	protected void init(VaadinRequest request) {
-		
+
 		fieldGroup = new BeanFieldGroup<Dates>(Dates.class);
 		dates = new Dates();
-		
+
 		rootLayout = new VerticalLayout();
 		rootLayout.setMargin(true);
-		
+
 		headerLayout = new VerticalLayout();
-		
-		headerLabel = new Label("<h2><b>"+DateStringUtils.HEADER_TEXT.getString()+"</b></h2>", ContentMode.HTML);
+
+		headerLabel = new Label("<h2><b>" + DateStringUtils.HEADER_TEXT.getString() + "</b></h2>", ContentMode.HTML);
 		headerLayout.addComponent(headerLabel);
-		
+
 		buttonLayout = new VerticalLayout();
 		buttonLayout.setSpacing(true);
-		buttonLayout.setMargin(true);
-		
+
 		dateButton = new Button(DateStringUtils.BUTTON_TEXT.getString());
 		dateButton.addClickListener(new ClickListener() {
-			
+
 			@Override
 			public void buttonClick(ClickEvent event) {
-				
+
 				date = new Date();
 				String formattedDate = dateF.format(date);
-				
-				timeLabel = new Label("<b>"+DateStringUtils.DATE_TEXT.getString()+"</b>", ContentMode.HTML);
+
+				timeLabel = new Label("<b>" + DateStringUtils.DATE_TEXT.getString() + "</b>", ContentMode.HTML);
 				dateLabel = new Label(timeLabel + formattedDate, ContentMode.HTML);
 				buttonLayout.addComponent(dateLabel);
-				
+
 				saveDate();
 			}
 		});
-		
+
 		fieldGroup.bindMemberFields(this);
 		fieldGroup.setItemDataSource(dates);
-		
+
 		buttonLayout.addComponent(dateButton);
-		
+
 		rootLayout.addComponent(headerLayout);
 		rootLayout.addComponent(dateButton);
 		rootLayout.addComponent(buttonLayout);
 		setContent(rootLayout);
 	}
-	
+
 	@Autowired
 	private DateService dateService;
-	
+
 	private void saveDate() {
-		
+
 		try {
 			fieldGroup.commit();
 		} catch (Exception e) {
 			System.out.println("ERROR");
 			return;
 		}
-		
+
 		dateService.saveDateToRepository(dates);
 	}
 }

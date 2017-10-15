@@ -32,20 +32,62 @@ import com.vaadin.ui.VerticalLayout;
 @Title("Date Storage App")
 public class MainUI extends UI {
 
+	/***
+	 *  Main layout VerticalLayout rootLayout
+	 */
 	private VerticalLayout rootLayout;
+	
+	/***
+	 *  Secondary layout VerticalLayout headerLayout
+	 */
 	private VerticalLayout headerLayout;
+	
+	/***
+	 *  Secondary layout VerticalLayout buttonLayout
+	 */
 	private VerticalLayout buttonLayout;
 
+	/***
+	 * Label headerLabel
+	 */
 	private Label headerLabel;
+	
+	/***
+	 * Label timeLabel
+	 */
 	private Label timeLabel;
+	
+	/***
+	 * Label dateLabel
+	 */
 	private Label dateLabel;
 
+	/***
+	 * Button dateButton;
+	 */
 	private Button dateButton;
 
+	/***
+	 * Date date;
+	 */
 	private Date date;
+	
+	/***
+	 * Format date to specific format to show time requested way.
+	 * format in question is dd/MM/yyyy HH:mm:ss
+	 */
 	private DateFormat dateF = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
+	/***
+	 * Model Dates 
+	 * variable name dates
+	 */
 	private Dates dates;
+	
+	/***
+	 * Connect the variables to each other with BeanFieldGroup<>
+	 * variable name fieldGroup
+	 */
 	private BeanFieldGroup<Dates> fieldGroup;
 
 	@Override
@@ -93,6 +135,11 @@ public class MainUI extends UI {
 		setContent(rootLayout);
 	}
 
+	/***
+	 * Autowired DateService class for the MainUI
+	 * Variable name dateService
+	 * This enables the MainUI class to use repository through service class
+	 */
 	@Autowired
 	private DateService dateService;
 

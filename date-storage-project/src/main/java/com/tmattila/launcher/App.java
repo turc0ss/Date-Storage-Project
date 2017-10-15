@@ -22,7 +22,7 @@ public class App extends SpringBootServletInitializer {
 	/**
 	 * 
 	 * @param args
-	 * This is a test addition
+	 * This is a test for changing JIRA status
 	 * 
 	 */
 	public static void main(String[] args) {

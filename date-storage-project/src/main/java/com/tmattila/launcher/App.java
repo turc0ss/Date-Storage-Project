@@ -22,6 +22,7 @@ public class App extends SpringBootServletInitializer {
 	/**
 	 * 
 	 * @param args
+	 * This is a test addition
 	 * 
 	 */
 	public static void main(String[] args) {

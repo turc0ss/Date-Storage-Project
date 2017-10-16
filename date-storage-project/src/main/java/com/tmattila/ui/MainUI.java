@@ -114,6 +114,8 @@ public class MainUI extends UI {
 
 			@Override
 			public void buttonClick(ClickEvent event) {
+				
+				logger.info("Inside button clicklistener");
 
 				date = new Date();
 				logger.info("Setting up a new date");
@@ -157,6 +159,6 @@ public class MainUI extends UI {
 		}
 
 		dateService.saveDateToRepository(dates);
-		logger.info("Save successful: " + dates.toString());
+		logger.info("Save successful");
 	}
 }

@@ -19,12 +19,13 @@ public class DateServiceImpl implements DateService {
 	@Override
 	public void saveDateToRepository(Dates dateDAO) {
 		
+		logger.info("Inside DateServiceImpl, saveDateToRepository");
 		Dates dates = new Dates();
 		dates.setTitle("DATE");
 		dates.setDateForm(dateDAO.getDateForm());
 		System.out.println("date: " + dates.toString());
 		
-		logger.info("Date saved to db: " + dateDAO.getDateForm());
+		logger.info("Date saved to db: " + dates.getDateForm());
 		
 		dateRepository.save(dates);
 	}

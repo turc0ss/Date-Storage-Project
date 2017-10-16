@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tmattila.model.Dates;
@@ -32,18 +33,20 @@ import com.vaadin.ui.VerticalLayout;
 @Title("Date Storage App")
 public class MainUI extends UI {
 
+	static final Logger logger = Logger.getLogger(MainUI.class);
+
 	/***
-	 *  Main layout VerticalLayout rootLayout
+	 * Main layout VerticalLayout rootLayout
 	 */
 	private VerticalLayout rootLayout;
-	
+
 	/***
-	 *  Secondary layout VerticalLayout headerLayout
+	 * Secondary layout VerticalLayout headerLayout
 	 */
 	private VerticalLayout headerLayout;
-	
+
 	/***
-	 *  Secondary layout VerticalLayout buttonLayout
+	 * Secondary layout VerticalLayout buttonLayout
 	 */
 	private VerticalLayout buttonLayout;
 
@@ -51,12 +54,12 @@ public class MainUI extends UI {
 	 * Label headerLabel
 	 */
 	private Label headerLabel;
-	
+
 	/***
 	 * Label timeLabel
 	 */
 	private Label timeLabel;
-	
+
 	/***
 	 * Label dateLabel
 	 */
@@ -71,22 +74,21 @@ public class MainUI extends UI {
 	 * Date date;
 	 */
 	private Date date;
-	
+
 	/***
-	 * Format date to specific format to show time requested way.
-	 * format in question is dd/MM/yyyy HH:mm:ss
+	 * Format date to specific format to show time requested way. format in
+	 * question is dd/MM/yyyy HH:mm:ss
 	 */
 	private DateFormat dateF = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 	/***
-	 * Model Dates 
-	 * variable name dates
+	 * Model Dates variable name dates
 	 */
 	private Dates dates;
-	
+
 	/***
-	 * Connect the variables to each other with BeanFieldGroup<>
-	 * variable name fieldGroup
+	 * Connect the variables to each other with BeanFieldGroup<> variable name
+	 * fieldGroup
 	 */
 	private BeanFieldGroup<Dates> fieldGroup;
 
@@ -114,6 +116,7 @@ public class MainUI extends UI {
 			public void buttonClick(ClickEvent event) {
 
 				date = new Date();
+				logger.info("Setting up a new date");
 				String formattedDate = dateF.format(date);
 
 				timeLabel = new Label("<b>" + DateStringUtils.DATE_TEXT.getString() + "</b>", ContentMode.HTML);
@@ -136,9 +139,8 @@ public class MainUI extends UI {
 	}
 
 	/***
-	 * Autowired DateService class for the MainUI
-	 * Variable name dateService
-	 * This enables the MainUI class to use repository through service class
+	 * Autowired DateService class for the MainUI Variable name dateService This
+	 * enables the MainUI class to use repository through service class
 	 */
 	@Autowired
 	private DateService dateService;
@@ -147,11 +149,14 @@ public class MainUI extends UI {
 
 		try {
 			fieldGroup.commit();
+			logger.info("Date saved");
 		} catch (Exception e) {
+			logger.error("Error in saving date. " + e.getMessage());
 			System.out.println("ERROR");
 			return;
 		}
 
 		dateService.saveDateToRepository(dates);
+		logger.info("Save successful: " + dates.toString());
 	}
 }

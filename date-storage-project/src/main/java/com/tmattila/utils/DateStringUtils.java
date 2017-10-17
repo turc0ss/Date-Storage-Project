@@ -2,7 +2,7 @@ package com.tmattila.utils;
 
 public enum DateStringUtils {
 
-	HEADER_TEXT("Welcome to date storage application. TESTING JIRA 2 !!"),
+	HEADER_TEXT("Welcome to date storage application. TESTING JIRA and fisheye"),
 	BUTTON_TEXT("Click to save the time of button press to database"),
 	DATE_TEXT("Date and time of button press: ");
 	

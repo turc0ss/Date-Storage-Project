@@ -7,7 +7,12 @@ import org.springframework.stereotype.Repository;
 
 import com.tmattila.model.Dates;
 
+/***
+ * 
+ * @author tapsa
+ *
+ */
 @Repository
-public interface DateRepository extends MongoRepository<Dates, Date>{
+public interface DateRepository extends MongoRepository<Dates, Date> {
 
 }

@@ -94,7 +94,7 @@ public class MainUI extends UI {
 	private BeanFieldGroup<Dates> fieldGroup;
 
 	@Override
-	protected void init(VaadinRequest request) {
+	protected final void init(final VaadinRequest request) {
 
 		fieldGroup = new BeanFieldGroup<Dates>(Dates.class);
 		dates = new Dates();
@@ -114,7 +114,7 @@ public class MainUI extends UI {
 		dateButton.addClickListener(new ClickListener() {
 
 			@Override
-			public void buttonClick(ClickEvent event) {
+			public void buttonClick(final ClickEvent event) {
 				
 				logger.info("Inside button clicklistener");
 
@@ -148,6 +148,9 @@ public class MainUI extends UI {
 	@Autowired
 	private DateService dateService;
 
+	/***
+	 * saveDate() method for saving the dates in to the db
+	 */
 	private void saveDate() {
 
 		try {

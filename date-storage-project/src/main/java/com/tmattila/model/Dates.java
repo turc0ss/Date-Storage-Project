@@ -29,7 +29,7 @@ public class Dates {
 	private String title;
 
 	/***
-	 * 
+	 * variable Date for setting new date time
 	 */
 	private Date date;
 
@@ -48,6 +48,7 @@ public class Dates {
 
 	/***
 	 * getter for title
+	 * @return title
 	 */
 	public final String getTitle() {
 		return title;
@@ -55,6 +56,8 @@ public class Dates {
 
 	/***
 	 * setter for title
+	 * @param title ***is the title parameter***
+	 * 
 	 */
 	public final void setTitle(final String title) {
 		this.title = title;
@@ -62,6 +65,7 @@ public class Dates {
 
 	/***
 	 * getter for date
+	 * @return date
 	 */
 	public final Date getDate() {
 		return this.date;
@@ -69,6 +73,7 @@ public class Dates {
 
 	/***
 	 * setter for date
+	 * @param date ***is the date parameter***
 	 */
 	public final void setDate(final Date date) {
 		this.date = new Date();
@@ -76,6 +81,7 @@ public class Dates {
 
 	/***
 	 * getter for dateform
+	 * @return dateform
 	 */
 	public final String getDateForm() {
 		return this.dateForm;

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.tmattila.model.Dates;
 import com.tmattila.service.DateService;
 import com.tmattila.utils.DateStringUtils;
+import com.tmattila.utils.LoggerMessages;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
@@ -151,14 +152,14 @@ public class MainUI extends UI {
 
 		try {
 			fieldGroup.commit();
-			logger.info("Date saved");
+			logger.info(LoggerMessages.DATE_SAVED.getString());
 		} catch (Exception e) {
-			logger.error("Error in saving date. " + e.getMessage());
+			logger.error(LoggerMessages.ERROR_SAVING_DATE.getString() + e.getMessage());
 			System.out.println("ERROR");
 			return;
 		}
 
 		dateService.saveDateToRepository(dates);
-		logger.info("Save successful");
+		logger.info(LoggerMessages.SAVE_SUCCESSFUL.getString());
 	}
 }

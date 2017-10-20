@@ -25,12 +25,12 @@ public class App extends SpringBootServletInitializer {
 	 * This is a test for changing JIRA status
 	 * 
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		SpringApplication.run(App.class, args);
 	}
 	
 	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+	protected final SpringApplicationBuilder configure(final SpringApplicationBuilder builder) {
 		return builder.sources(App.class);
 	}
 }

@@ -8,5 +8,10 @@ import com.tmattila.model.Dates;
  *
  */
 public interface DateService {
-	 void saveDateToRepository(final Dates dateDAO);
+
+	/***
+	 * 
+	 * @param dateDAO
+	 */
+	void saveDateToRepository(final Dates dateDAO);
 }

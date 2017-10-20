@@ -37,59 +37,59 @@ public class MainUI extends UI {
 	static final Logger logger = Logger.getLogger(MainUI.class);
 
 	/***
-	 * Main layout VerticalLayout rootLayout
+	 * Main layout VerticalLayout rootLayout.
 	 */
 	private VerticalLayout rootLayout;
 
 	/***
-	 * Secondary layout VerticalLayout headerLayout
+	 * Secondary layout VerticalLayout headerLayout.
 	 */
 	private VerticalLayout headerLayout;
 
 	/***
-	 * Secondary layout VerticalLayout buttonLayout
+	 * Secondary layout VerticalLayout buttonLayout.
 	 */
 	private VerticalLayout buttonLayout;
 
 	/***
-	 * Label headerLabel
+	 * Label headerLabel.
 	 */
 	private Label headerLabel;
 
 	/***
-	 * Label timeLabel
+	 * Label timeLabel.
 	 */
 	private Label timeLabel;
 
 	/***
-	 * Label dateLabel
+	 * Label dateLabel.
 	 */
 	private Label dateLabel;
 
 	/***
-	 * Button dateButton;
+	 * Button dateButton.
 	 */
 	private Button dateButton;
 
 	/***
-	 * Date date;
+	 * Date date.
 	 */
 	private Date date;
 
 	/***
 	 * Format date to specific format to show time requested way. format in
-	 * question is dd/MM/yyyy HH:mm:ss
+	 * question is dd/MM/yyyy HH:mm:ss.
 	 */
 	private DateFormat dateF = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 	/***
-	 * Model Dates variable name dates
+	 * Model Dates variable name dates.
 	 */
 	private Dates dates;
 
 	/***
 	 * Connect the variables to each other with BeanFieldGroup<> variable name
-	 * fieldGroup
+	 * fieldGroup.
 	 */
 	private BeanFieldGroup<Dates> fieldGroup;
 
@@ -115,7 +115,7 @@ public class MainUI extends UI {
 
 			@Override
 			public void buttonClick(final ClickEvent event) {
-				
+
 				logger.info("Inside button clicklistener");
 
 				date = new Date();
@@ -143,13 +143,13 @@ public class MainUI extends UI {
 
 	/***
 	 * Autowired DateService class for the MainUI Variable name dateService This
-	 * enables the MainUI class to use repository through service class
+	 * enables the MainUI class to use repository through service class.
 	 */
 	@Autowired
 	private DateService dateService;
 
 	/***
-	 * saveDate() method for saving the dates in to the db
+	 * saveDate() method for saving the dates in to the db.
 	 */
 	private void saveDate() {
 

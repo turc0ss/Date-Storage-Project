@@ -18,18 +18,18 @@ import com.tmattila.utils.LoggerMessages;
 public class DateServiceImpl implements DateService {
 
 	/***
-	 * Logging the state of the program to a log file
+	 * Logging the state of the program to a log file.
 	 */
 	final static Logger logger = Logger.getLogger(DateServiceImpl.class);
 	
 	/***
-	 * Autowire the dateResitory to the service so it can be used
+	 * Autowire the dateResitory to the service so it can be used.
 	 */
 	@Autowired
 	private DateRepository dateRepository;
 	
 	/***
-	 * saveDateToRepository method to perform all the saving of the data to the repository
+	 * SaveDateToRepository method to perform all the saving of the data to the repository.
 	 */
 	@Override
 	public final void saveDateToRepository(final Dates dateDAO) {

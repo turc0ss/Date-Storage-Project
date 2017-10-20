@@ -2,6 +2,11 @@ package com.tmattila.service;
 
 import com.tmattila.model.Dates;
 
+/***
+ * 
+ * @author tapsa
+ *
+ */
 public interface DateService {
-	public void saveDateToRepository(Dates dateDAO);
+	 void saveDateToRepository(final Dates dateDAO);
 }

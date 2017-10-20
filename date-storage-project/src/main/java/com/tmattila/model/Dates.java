@@ -17,37 +17,37 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Dates {
 
 	/***
-	 * String id, datebase field value id
+	 * String id, datebase field value id.
 	 */
 	@Id
 	private String id;
 
 	/***
-	 * String title, database field value Title
+	 * String title, database field value Title.
 	 */
 	@Field(value = "Title:")
 	private String title;
 
 	/***
-	 * variable Date for setting new date time
+	 * variable Date for setting new date time.
 	 */
 	private Date date;
 
 	/***
-	 * String date, database field value Date
+	 * String date, database field value Date.
 	 */
 	@Field(value = "Date:")
 	private String dateForm;
 
 	/***
-	 * Constructor Dates
+	 * Constructor Dates.
 	 */
 	public Dates() {
 
 	}
 
 	/***
-	 * getter for title
+	 * Getter for title.
 	 * @return title
 	 */
 	public final String getTitle() {
@@ -55,7 +55,7 @@ public class Dates {
 	}
 
 	/***
-	 * setter for title
+	 * Setter for title.
 	 * @param title ***is the title parameter***
 	 * 
 	 */
@@ -64,7 +64,7 @@ public class Dates {
 	}
 
 	/***
-	 * getter for date
+	 * Getter for date.
 	 * @return date
 	 */
 	public final Date getDate() {
@@ -72,7 +72,7 @@ public class Dates {
 	}
 
 	/***
-	 * setter for date
+	 * Setter for date.
 	 * @param date ***is the date parameter***
 	 */
 	public final void setDate(final Date date) {
@@ -80,7 +80,7 @@ public class Dates {
 	}
 
 	/***
-	 * getter for dateform
+	 * Getter for dateform.
 	 * @return dateform
 	 */
 	public final String getDateForm() {
@@ -88,7 +88,7 @@ public class Dates {
 	}
 
 	/***
-	 * setter for dateform, will perform modifications to the new date
+	 * Setter for dateform, will perform modifications to the new date.
 	 */
 	public final void setDateForm(final String dateForm) {
 		Date date = new Date();
@@ -97,7 +97,7 @@ public class Dates {
 	}
 
 	/***
-	 * toString method for showing the data
+	 * ToString method for showing the data.
 	 */
 	@Override
 	public final String toString() {

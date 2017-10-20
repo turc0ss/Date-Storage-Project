@@ -20,7 +20,7 @@ public enum DateStringUtils {
 	 * constructor for DateStringUtils.
 	 * @param string
 	 */
-	private DateStringUtils(String string) {
+	private DateStringUtils(final String string) {
 		this.string = string;
 	}
 	

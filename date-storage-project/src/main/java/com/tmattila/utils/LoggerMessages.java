@@ -22,7 +22,7 @@ public enum LoggerMessages {
 	 * constructor for LoggerMessages.
 	 * @param string
 	 */
-	private LoggerMessages(String string) {
+	private LoggerMessages(final String string) {
 		this.string = string;
 	}
 	

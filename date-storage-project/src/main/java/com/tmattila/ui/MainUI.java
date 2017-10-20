@@ -34,6 +34,9 @@ import com.vaadin.ui.VerticalLayout;
 @Title("Date Storage App")
 public class MainUI extends UI {
 
+	/***
+	 * logging the state of the program to a logging file
+	 */
 	static final Logger logger = Logger.getLogger(MainUI.class);
 
 	/***

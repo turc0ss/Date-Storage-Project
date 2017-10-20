@@ -21,8 +21,8 @@ public class App extends SpringBootServletInitializer {
 
 	/**
 	 * 
+	 * The main class to launch the app. Most important class.
 	 * @param args
-	 * This is a test for changing JIRA status
 	 * 
 	 */
 	public static void main(final String[] args) {

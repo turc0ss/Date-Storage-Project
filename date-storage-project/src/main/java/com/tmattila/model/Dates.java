@@ -8,52 +8,93 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+/***
+ * 
+ * @author tapsa
+ *
+ */
 @Document(collection = "dates")
 public class Dates {
 
+	/***
+	 * String id, datebase field value id
+	 */
 	@Id
 	private String id;
 
+	/***
+	 * String title, database field value Title
+	 */
 	@Field(value = "Title:")
 	private String title;
 
+	/***
+	 * 
+	 */
 	private Date date;
 
+	/***
+	 * String date, database field value Date
+	 */
 	@Field(value = "Date:")
 	private String dateForm;
 
+	/***
+	 * Constructor Dates
+	 */
 	public Dates() {
 
 	}
 
-	public String getTitle() {
+	/***
+	 * getter for title
+	 */
+	public final String getTitle() {
 		return title;
 	}
 
-	public void setTitle(String title) {
+	/***
+	 * setter for title
+	 */
+	public final void setTitle(final String title) {
 		this.title = title;
 	}
 
-	public Date getDate() {
+	/***
+	 * getter for date
+	 */
+	public final Date getDate() {
 		return this.date;
 	}
 
-	public void setDate(Date date) {
+	/***
+	 * setter for date
+	 */
+	public final void setDate(final Date date) {
 		this.date = new Date();
 	}
 
-	public String getDateForm() {
+	/***
+	 * getter for dateform
+	 */
+	public final String getDateForm() {
 		return this.dateForm;
 	}
 
-	public void setDateForm(String dateForm) {
+	/***
+	 * setter for dateform, will perform modifications to the new date
+	 */
+	public final void setDateForm(final String dateForm) {
 		Date date = new Date();
 		DateFormat dateF = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		this.dateForm = dateF.format(date);
 	}
 
+	/***
+	 * toString method for showing the data
+	 */
 	@Override
-	public String toString() {
+	public final String toString() {
 		return this.date + " --- " + this.dateForm;
 	}
 }

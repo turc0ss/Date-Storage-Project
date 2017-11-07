@@ -145,7 +145,7 @@ public class MainUI extends UI {
 	}
 
 	/***
-	 * Autowired DateService class for the MainUI Variable name dateService This
+	 * Autowired DateService class for the MainUI Variable name dateService. This
 	 * enables the MainUI class to use repository through service class.
 	 */
 	@Autowired

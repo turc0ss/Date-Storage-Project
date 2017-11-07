@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 /***
  * 
+ * The main class to launch the app. Most important class.
  * @author tapsa
  *
  */
@@ -21,7 +22,6 @@ public class App extends SpringBootServletInitializer {
 
 	/**
 	 * 
-	 * The main class to launch the app. Most important class.
 	 * @param args
 	 * 
 	 */

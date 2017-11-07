@@ -30,6 +30,7 @@ public class DateServiceImpl implements DateService {
 	
 	/***
 	 * SaveDateToRepository method to perform all the saving of the data to the repository.
+	 * @param dateDAO This is the date object to be saved on the repository
 	 */
 	@Override
 	public final void saveDateToRepository(final Dates dateDAO) {

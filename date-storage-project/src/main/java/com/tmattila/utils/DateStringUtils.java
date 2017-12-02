@@ -7,7 +7,7 @@ package com.tmattila.utils;
  */
 public enum DateStringUtils {
 
-	HEADER_TEXT("Welcome to date storage application TEST GRTP-10 comment test 212"),
+	HEADER_TEXT("Welcome to date storage application TEST GRTP-10 comment test 2123"),
 	BUTTON_TEXT("Click to save the time of button press to database"),
 	DATE_TEXT("Date and time of button press: ");
 	
